@@ -1,6 +1,6 @@
 # WhacAMole
 <div>
-  <p>Simple whac-a-mole like Android (API30) game.</p>
+  <p>Simple whac-a-mole like Android (API 30) game.</p>
 </div>
 <div>
   Main features: 
@@ -8,6 +8,7 @@
     <li>Random count of active holes (with randomly selected pre-generated positions), 6 to 9.</li>
     <li>Random count of active moles (peeking). With a gradient decreasing chance to see more than two active moles peeking.</li>
     <li>The last record save.</li>
+    <li>Horizontal device orientation work mode.</li>
     <li>Show and mole hide animations.</li>
   </ul>
 </div>
