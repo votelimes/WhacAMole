@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="vm"
+            type="com.votelimes.whacamole.viewmodel.GameViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.GameFragment"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/grass_bg"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <!--info-->
+        <!--time-->
+        <LinearLayout
+            android:id="@+id/time_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/record_score_shape"
+            android:orientation="horizontal"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time: "
+                android:textSize="24sp"
+                android:textColor="@color/baby_powder"
+                />
+
+            <TextView
+                android:id="@+id/time_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(vm.timeObs)}"
+                android:textSize="28sp"
+                android:textColor="@color/baby_powder"
+                />
+
+            <TextView
+                android:id="@+id/time_postfix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="24sp"
+                android:textColor="@color/baby_powder"
+                />
+        </LinearLayout>
+        <!--score-->
+        <LinearLayout
+            android:id="@+id/score_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/record_score_shape"
+            android:orientation="horizontal"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/score_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score: "
+                android:textSize="24sp"
+                android:textColor="@color/baby_powder"
+                />
+
+            <TextView
+                android:id="@+id/score_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(vm.scoreObs)}"
+                android:textSize="28sp"
+                android:textColor="@color/baby_powder"
+                />
+        </LinearLayout>
+        <!--top holes-->
+
+        <ImageView
+            android:id="@+id/hole1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="96dp"
+            android:src="@drawable/hole"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/time_linear"
+            android:visibility="gone"
+
+            />
+        <ImageView
+            android:id="@+id/mole1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mole"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/hole1"
+            app:layout_constraintEnd_toEndOf="@id/hole1"
+            app:layout_constraintBottom_toBottomOf="@id/hole1"
+            android:visibility="gone"
+             />
+
+
+        <!--middle holes-->
+
+        <ImageView
+            android:id="@+id/hole2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="80dp"
+            android:src="@drawable/hole"
+            app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/mole2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mole"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/hole2"
+            app:layout_constraintEnd_toEndOf="@id/hole2"
+            app:layout_constraintBottom_toBottomOf="@id/hole2"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/hole3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/hole"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/score_linear"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/mole3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mole"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/hole3"
+            app:layout_constraintEnd_toEndOf="@id/hole3"
+            app:layout_constraintBottom_toBottomOf="@id/hole3"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/hole4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="40dp"
+            android:src="@drawable/hole"
+            app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+            app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/mole4"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mole"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/hole4"
+            app:layout_constraintEnd_toEndOf="@id/hole4"
+            app:layout_constraintBottom_toBottomOf="@id/hole4"
+            android:visibility="gone" />
+        <!--bottom holes-->
+
+        <ImageView
+            android:id="@+id/hole5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="28dp"
+            android:src="@drawable/hole"
+            app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.519"
+            app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/hole2"
+            app:layout_constraintVertical_bias="0.428"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/mole5"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mole"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/hole5"
+            app:layout_constraintEnd_toEndOf="@id/hole5"
+            app:layout_constraintBottom_toBottomOf="@id/hole5"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/hole6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="72dp"
+            android:src="@drawable/hole"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_guideline"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/mole6"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mole"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/hole6"
+            app:layout_constraintEnd_toEndOf="@id/hole6"
+            app:layout_constraintBottom_toBottomOf="@id/hole6"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/hole7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/hole"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/mole7"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mole"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/hole7"
+            app:layout_constraintEnd_toEndOf="@id/hole7"
+            app:layout_constraintBottom_toBottomOf="@id/hole7"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/hole8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="44dp"
+            android:src="@drawable/hole"
+            app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+            app:layout_constraintTop_toTopOf="@+id/horizontal_guideline"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/mole8"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mole"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/hole8"
+            app:layout_constraintEnd_toEndOf="@id/hole8"
+            app:layout_constraintBottom_toBottomOf="@id/hole8"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/hole9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="48dp"
+            android:src="@drawable/hole"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/mole9"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mole"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintStart_toStartOf="@id/hole9"
+            app:layout_constraintEnd_toEndOf="@id/hole9"
+            app:layout_constraintBottom_toBottomOf="@id/hole9"
+            android:visibility="gone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

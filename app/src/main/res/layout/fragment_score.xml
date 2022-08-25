@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+    <data>
+        <import type="android.content.Context" />
+        <import type="android.view.View"/>
+        <variable
+            name="vm"
+            type="com.votelimes.whacamole.viewmodel.ScoreViewModel" />
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.ScoreFragment"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="24dp"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textColor="@color/green"
+            android:text="Match completed" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You have set a new record!"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/red"
+            android:visibility="@{vm.isANewRecord(context) ? View.VISIBLE : View.GONE}"
+            />
+
+        <LinearLayout
+            android:id="@+id/highscore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/record_score_shape"
+            android:paddingStart="8dp"
+            >
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Absolute record: "
+                android:textSize="20sp"
+                android:textColor="@color/baby_powder"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/absolute_highscore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(vm.getHighScore(context))}"
+                android:textSize="20sp"
+                android:textColor="@color/baby_powder"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/big_text_shape"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            >
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your score: "
+                android:textSize="20sp"
+                android:textColor="@color/baby_powder"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/current_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(vm.scoreObs)}"
+                android:textSize="20sp"
+                android:textColor="@color/baby_powder"
+                />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/play_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Play again"
+            android:layout_gravity="center"
+            app:backgroundTint="@color/orange"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Home"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+</layout>
