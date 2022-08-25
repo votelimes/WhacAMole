@@ -13,17 +13,17 @@
 </div>
 <div>
 <figure>
-  <img src="/img/home.png" alt="Navigate views" style="display:block; margin-left: auto; margin-right: auto;width:30%">
+  <img src="/img/home.png" alt="Navigate views" style="display:block; margin-left: auto; margin-right: auto;width:20%">
   <figcaption>Fig.1 - Initial application page with rules and play button.</figcaption>
 </figure>
   
 <figure>
-  <img src="/img/game.png" alt="Navigate views" style="display:block; margin-left: auto; margin-right: auto;width:30%">
+  <img src="/img/game.png" alt="Navigate views" style="display:block; margin-left: auto; margin-right: auto;width:20%">
   <figcaption>Fig.2 - The game page with various count of peeking moles.</figcaption>
 </figure>
   
 <figure>
-  <img src="/img/score.png" alt="Navigate views" style="display:block; margin-left: auto; margin-right: auto;width:30%">
+  <img src="/img/score.png" alt="Navigate views" style="display:block; margin-left: auto; margin-right: auto;width:20%">
   <figcaption>Fig.3 - After-game page with player score and stored highscore.</figcaption>
 </figure>
 </div>
