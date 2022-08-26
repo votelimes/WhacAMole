@@ -17,7 +17,7 @@
   <p>Application demo:</p>
   <br>
   <figure>
-    <img src="/img/demo.gif" alt="Navigate views" style="display:block; margin-left: auto; margin-right: auto;width:20%">
+    <img src="/img/demo.gif" alt="Navigate views" style="display:block; margin-left: auto; margin-right: auto;width:60%">
     <figcaption>Fig.1 - Application demo with listed features.</figcaption>
   </figure>
   <br>
