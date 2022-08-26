@@ -108,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Home"
+            android:text="Menu"
             android:layout_gravity="center"
             />
     </LinearLayout>

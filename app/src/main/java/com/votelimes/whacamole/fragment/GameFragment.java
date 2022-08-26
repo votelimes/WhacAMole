@@ -65,7 +65,7 @@ public class GameFragment extends Fragment {
         finishGameTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                if((viewModel.getTime() - 1) == -1){
+                if((viewModel.getTime() - 1) < 1){
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -219,6 +219,9 @@ public class GameFragment extends Fragment {
         return result;
     }
 
+
+    // Class that helps to manage which mole have to peek or hide. Objects of this stored in holesAndMoles list,
+    // that creating by viewModel and managing by showMoleExecutor thread.
     private class HoleAndMole {
         private final int MOLE_SHOW_TIME = 500;
         private ImageView hole;
