@@ -12,7 +12,7 @@
     <li>Show and mole hide animations.</li>
   </ul>
 </div>
-<div>
+<div style="text-align: center;">
   <br>
   <p>Application demo:</p>
   <br>
